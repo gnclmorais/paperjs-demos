@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS3 circle animation</title>
+	<style>
+        body{
+            background: #eee;
+        }
+
+        .loading-wrap {
+        	width: 60px;
+        	height: 60px;
+        	position: absolute;
+        	top: 50%;
+        	left: 50%;
+        	margin: -30px 0 0 -30px;
+        	background: #777;
+        	-webkit-border-radius: 30px;
+        	   -moz-border-radius: 30px;
+        	        border-radius: 30px;
+        	-webkit-animation: rotation ease-in-out 2s infinite;
+        	 -moz-animation: rotation ease-in-out 2s infinite;
+        	  -ms-animation: rotation ease-in-out 2s infinite;
+        		  animation: rotation ease-in-out 2s infinite;
+        }
+
+        .circle1,
+        .circle2,
+        .circle3 {
+              width: 60px;
+        	  height: 60px;
+              background: #444;
+              position: absolute;
+              left: 0px;
+        	  top: -40px;
+              -webkit-border-radius: 30px;
+                 -moz-border-radius: 30px;
+                      border-radius: 30px;
+        	  -webkit-animation: fadecolor 2s 1s infinite;
+                 -moz-animation: fadecolor 2s 1s infinite;
+                  -ms-animation: fadecolor 2s 1s infinite;
+                      animation: fadecolor 2s 1s infinite;
+        }
+
+        .circle2,
+        .circle3{
+              content: '';
+              top: 21px;
+        	  left: 35px;
+        	  -webkit-animation-delay: 1.1s;
+                 -moz-animation-delay: 1.1s;
+                  -ms-animation-delay: 1.1s;
+                      animation-delay: 1.1s;
+        }
+
+        .circle3 {
+              left: -35px;
+        	  -webkit-animation-delay: 1.2s;
+                 -moz-animation-delay: 1.2s;
+                  -ms-animation-delay: 1.2s;
+                      animation-delay: 1.2s;
+        }
+
+        @-moz-keyframes rotation
+        {
+            0%   { -moz-transform: rotate(0deg); }
+            20%  { -moz-transform: rotate(360deg); }
+            100% { -moz-transform: rotate(360deg); }
+        }
+
+        @-webkit-keyframes rotation {
+            0%   { -webkit-transform: rotate(0deg); }
+            20%  { -webkit-transform: rotate(360deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @-ms-keyframes rotation {
+            0%   { -webkit-transform: rotate(0deg); }
+            20%  { -webkit-transform: rotate(360deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes rotation {
+            0%   { transform: rotate(0deg); }
+            20%  { transform: rotate(360deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @-moz-keyframes fadecolor {
+            0%   { background-color: #eee; }
+            100% { background-color: #444; }
+        }
+
+        @-webkit-keyframes fadecolor {
+            0%   { background-color: #eee; }
+            100% { background-color: #444; }
+        }
+
+        @-ms-keyframes fadecolor {
+            0%   { background-color: #eee; }
+            100% { background-color: #444; }
+        }
+
+        @keyframes fadecolor {
+            0%   { background-color: #eee; }
+            100% { background-color: #444; }
+        }
+	</style>
+</head>
+
+<body>
+	<div class="loading-wrap">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+	</div>
+</body>
+</html>
