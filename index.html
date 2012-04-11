@@ -4,9 +4,8 @@
     <meta charset="utf-8" />
     <title>Paper.js demos</title>
     <script type="text/javascript" src="js/paper_nightly.js"></script>
-    <!-- Define inlined PaperScript associate it with myCanvas -->
-    <!--<script type="text/paperscript" src="js/cmyk.js" canvas="myCanvas"></script>-->
     <script>
+        // Demo array
         var demos = [
             {
                 name: 'cmyk',
@@ -19,13 +18,20 @@
         ];
 
         // Setup left and right keys to cycle through the demos
-        document.onkeydown = checkKeycode;
+        document.onkeydown = function(event) {
+            switch (event.which || event.keyCode) {
+                // Left arrow pressed
+                case 37:
+                    // Load previous demo
 
-        function checkKeycode(event) {
-            var keyCode = event.which || event.keyCode;
+                    break;
 
-            alert(keyCode);
-            console.log(keyCode);
+                // Right arrow pressed
+                case 39:
+                    // Load next demo
+
+                    break;
+            }
         }
     </script>
 </head>
