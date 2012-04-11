@@ -10,8 +10,8 @@
     <script>
         // Demo array
         var demo = (function () {
-            var index = 0,
-                demos = [
+            var _index = 0,
+                _demos = [
                     {   // Star field demo
                         name: 'stars',
                         src:  'js/stars.js'
@@ -25,8 +25,8 @@
                         src:  'js/shooter.js'
                     }
                 ],
-                loadCurrentDemo = function () {
-                    if (index < 0 || index > demos.length) return;
+                _loadCurrentDemo = function () {
+                    if (_index < 0 || _index > _demos.length) return;
 
                     // Run method
 
@@ -34,16 +34,16 @@
 
             return {
                 nextDemo: function () {
-                    index += 1;
-                    if (index >= demos.length) index = 0;
+                    _index += 1;
+                    if (_index >= _demos.length) index = 0;
 
-                    loadCurrentDemo();
+                    _loadCurrentDemo();
                 },
                 previousDemo: function () {
-                    index -= 1;
-                    if (index < 0) index = demos.length - 1;
+                    _index -= 1;
+                    if (_index < 0) index = _demos.length - 1;
 
-                    loadCurrentDemo();
+                    _loadCurrentDemo();
                 }
             };
         })();
@@ -51,7 +51,7 @@
 
 
 
-        // Setup left and right keys to cycle through the demos
+        // Setup left and right keys to cycle through the _demos
         document.onkeydown = function(event) {
             switch (event.which || event.keyCode) {
                 // Left arrow pressed
