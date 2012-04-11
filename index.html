@@ -4,18 +4,52 @@
     <meta charset="utf-8" />
     <title>Paper.js demos</title>
     <script type="text/javascript" src="js/paper_nightly.js"></script>
+    <script type="text/javascript" src="js/stars.js"></script>
+    <script type="text/javascript" src="js/cmyk.js"></script>
+    <script type="text/javascript" src="js/shooter.js"></script>
     <script>
         // Demo array
-        var demos = [
-            {
-                name: 'cmyk',
-                src:  'js/cmyk.js'
-            },
-            {
-                name: 'shooter',
-                src:  'js/shooter.js'
-            }
-        ];
+        var demo = (function () {
+            var index = 0,
+                demos = [
+                    {   // Star field demo
+                        name: 'stars',
+                        src:  'js/stars.js'
+                    },
+                    {   // Click interaction demo
+                        name: 'cmyk',
+                        src:  'js/cmyk.js'
+                    },
+                    {   // Basic shooter demo
+                        name: 'shooter',
+                        src:  'js/shooter.js'
+                    }
+                ],
+                loadCurrentDemo = function () {
+                    if (index < 0 || index > demos.length) return;
+
+                    // Run method
+
+                }.bind(this);
+
+            return {
+                nextDemo: function () {
+                    index += 1;
+                    if (index >= demos.length) index = 0;
+
+                    loadCurrentDemo();
+                },
+                previousDemo: function () {
+                    index -= 1;
+                    if (index < 0) index = demos.length - 1;
+
+                    loadCurrentDemo();
+                }
+            };
+        })();
+
+
+
 
         // Setup left and right keys to cycle through the demos
         document.onkeydown = function(event) {
