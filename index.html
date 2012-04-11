@@ -11,8 +11,22 @@
             {
                 name: 'cmyk',
                 src:  'js/cmyk.js'
+            },
+            {
+                name: 'shooter',
+                src:  'js/shooter.js'
             }
         ];
+
+        // Setup left and right keys to cycle through the demos
+        document.onkeydown = checkKeycode;
+
+        function checkKeycode(event) {
+            var keyCode = event.which || event.keyCode;
+
+            alert(keyCode);
+            console.log(keyCode);
+        }
     </script>
 </head>
 
