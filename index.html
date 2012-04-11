@@ -1,1 +1,25 @@
-My GitHub Page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Paper.js demos</title>
+    <script type="text/javascript" src="js/paper_nightly.js"></script>
+    <!-- Define inlined PaperScript associate it with myCanvas -->
+    <!--<script type="text/paperscript" src="js/cmyk.js" canvas="myCanvas"></script>-->
+    <script>
+        var demos = [
+            {
+                name: 'cmyk',
+                src:  'js/cmyk.js'
+            }
+        ];
+    </script>
+</head>
+
+<body style="width: 100%; height: 100%; margin: 0;">
+    <p class="title">
+        Paper.js Demo: <span class="demoname"></span>
+    </p>
+    <canvas id="myCanvas" resize style="width: 100%; height: 100%; display: block; *display: inline; *zoom: 1;"></canvas>
+</body>
+</html>
