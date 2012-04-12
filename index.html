@@ -3,77 +3,48 @@
 <head>
     <meta charset="utf-8" />
     <title>Paper.js demos</title>
-    <script type="text/javascript" src="js/paper_nightly.js"></script>
-    <script type="text/javascript" src="js/stars.js"></script>
-    <script type="text/javascript" src="js/cmyk.js"></script>
-    <script type="text/javascript" src="js/shooter.js"></script>
-    <script>
-        // Demo array
-        var demo = (function () {
-            var _index = 0,
-                _demos = [
-                    {   // Star field demo
-                        name: 'stars',
-                        src:  'js/stars.js'
-                    },
-                    {   // Click interaction demo
-                        name: 'cmyk',
-                        src:  'js/cmyk.js'
-                    },
-                    {   // Basic shooter demo
-                        name: 'shooter',
-                        src:  'js/shooter.js'
-                    }
-                ],
-                _loadCurrentDemo = function () {
-                    if (_index < 0 || _index > _demos.length) return;
-
-                    // Run method
-
-                }.bind(this);
-
-            return {
-                nextDemo: function () {
-                    _index += 1;
-                    if (_index >= _demos.length) index = 0;
-
-                    _loadCurrentDemo();
-                },
-                previousDemo: function () {
-                    _index -= 1;
-                    if (_index < 0) index = _demos.length - 1;
-
-                    _loadCurrentDemo();
-                }
-            };
-        })();
-
-
-
-
-        // Setup left and right keys to cycle through the _demos
-        document.onkeydown = function(event) {
-            switch (event.which || event.keyCode) {
-                // Left arrow pressed
-                case 37:
-                    // Load previous demo
-
-                    break;
-
-                // Right arrow pressed
-                case 39:
-                    // Load next demo
-
-                    break;
-            }
+    <link  href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css" >
+    <style>
+        a {
+            text-decoration:  none;
+            color: red;
         }
-    </script>
+
+        p {
+            margin: 10% 0 5% 0;
+        }
+
+        div {
+            margin-left: 20px;
+        }
+
+        ul, li {
+            display: inline;
+            margin-right: 40px;
+            padding: 0;
+            font-weight: bold;
+            font-family: 'Raleway', serif;
+            font-size: 1.5em;
+        }
+
+        .title {
+            font-family: 'Raleway', serif;
+            font-size: 10em;
+            color: black;
+        }
+    </style>
 </head>
 
 <body style="width: 100%; height: 100%; margin: 0;">
-    <p class="title">
-        Paper.js Demo: <span class="demoname"></span>
-    </p>
-    <canvas id="myCanvas" resize style="width: 100%; height: 100%; display: block; *display: inline; *zoom: 1;"></canvas>
+    <div>
+        <p class="title">
+            <a href="http://paperjs.org/">Paper.js</a> Demos: <span class="demoname"></span>
+        </p>
+        <ul>
+            <li><a href="stars.html">Starfield</a></li>
+            <li><a href="cmyk.html">CMYK</a></li>
+            <li><a href="track.html">Basic shooter</a></li>
+        </ul>
+    </div>
 </body>
 </html>
