@@ -1,5 +1,5 @@
-view.size.width = document.width;
-view.size.height = document.height;
+view.size.width = window.innerWidth;
+view.size.height = window.innerHeight;
 
 var // Arithmetic variables
     radius  = 50,
@@ -31,7 +31,7 @@ var // Arithmetic variables
     },
     // General vars
     triangle,
-    i = nrHoriz,
+    i,
     j,
     n = 0,
     offset,
@@ -174,7 +174,7 @@ var onFrameFn = function (event) {
             triangle = downTriangles[dx][dy];
 
             setTimeout(func.bind(triangle), movementSpeed * i);
-            
+
             i += 1;
             dy -= 1;
             dx -= (dy % 2) ? 2 : 1;
@@ -194,6 +194,8 @@ var onFrameFn = function (event) {
             dx += (dy % 2) ? 1 : 2;
         }
     };
+
+i = nrHoriz;
 
 // Cycle through the triangles
 while (i > 0) {
